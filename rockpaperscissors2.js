@@ -172,8 +172,15 @@ let currentRound = 0;
 function playRound (e) {
 
     let event;
+
+    const roundResult = document.getElementById("roundResult");
+    // const displayPlayerRound = document.querySelector("playerRoundSelection");
+    // const displayComputerRound = document.querySelector("computerRoundSelection");
+
     // this captures the players choice after clicking one of three button selections
     playerChoice = e.target.id;
+    console.log(e);
+    console.log(e.target.id);
 
     // this variable rep. a function that generates the computers choice
     computerChoice = getComputerChoice();
@@ -186,26 +193,30 @@ function playRound (e) {
     }
 
     while (event) {
-        console.log(`Player Chose: ${playerChoice}`);
-        console.log(`Computer Chose: ${computerChoice}`);
         playGame = clash(playerChoice, computerChoice);
         console.log(playGame);
 
         if (playGame === true) {
             userScore++;
+            roundResult.innerText = ("Player wins this round!")
         }
 
         if (playGame === false) {
             computerScore++;
+            roundResult.innerText = ("Computer wins this round!")
         }
 
         if (playGame === undefined) {
             tieCount++;
+            roundResult.innerText = ("Tie!")
         }
         event = false;
 
     }
     
+    document.getElementById("playerRoundSelection").innerText = (`Player Selection: ${playerChoice}`);
+    document.getElementById("computerRoundSelection").innerText = (`Computer Selection: ${computerChoice}`);
+
     currentRound++;
     currentScoreBoard(userScore, computerScore, currentRound);
 

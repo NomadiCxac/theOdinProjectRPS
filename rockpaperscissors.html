@@ -22,17 +22,17 @@
 <body class="weapons">
   <script src="rockpaperscissors2.js"defer></script>
 
-  <button class="weapon"> 
+  <button class="weapon" id="rock"> 
     <img src="pixelRock.png" width="100px" id="rock"/>
     <header id="rock">Rock</header>
   </button> 
 
-  <button class="weapon">
+  <button class="weapon" id="paper">
     <img src="pixelPaper.png" width="100px" id="paper"></img>
     <header id="paper">Paper</header>
   </button>
 
-  <button class="weapon"> 
+  <button class="weapon" id="scissors"> 
     <img src="pixelScissors.png" width="100px" id="scissors"></img>
     <header id="scissors">Scissors</header>
   </button>
@@ -47,6 +47,18 @@
     <div class="scoreboard" id="playerSB">Score: 0</div>
     <div class="scoreboard" id="computerSB">Score: 0</div>
   </div>
+
+  <br/>
+
+  <div class="playerRoundSelection" id="playerRoundSelection">
+    Player Selection:
+  </div>
+  <div class="computerRoundSelection" id="computerRoundSelection">
+    Computer Selection: 
+  </div>
+  <div class="roundResult" id="roundResult">
+  </div>
+
 
   <br/>
   <br/>
